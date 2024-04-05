@@ -1,0 +1,160 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class DoWhileLoops
+{
+
+ 
+
+ 
+
+    public static void main(String[] args) 
+    {
+        //DO WHILE LOOPS
+
+        //Prompting the user
+        //Menu
+        //1. Adidas Sneakers
+        //2. Nike Sneakers
+        //3. Puma Sneakers
+        //4. Total Price
+
+        //objects
+        Scanner keyboard = new Scanner(System.in);
+        DecimalFormat formatter = new DecimalFormat("R#,###.00");
+
+        //variables
+        String name;
+        double Orignalprice = 0;
+        double discoutPrice;
+        final double DISCOUNT = 0.3;
+        boolean countinueShopping = true;  
+        int userInput;
+        char cAnswer;
+        char cHasCard;
+        double currentDiscountPrice = 0;
+
+        System.out.println("Enter Name: ");
+        name = keyboard.nextLine();
+
+ 
+
+        
+        do
+        {
+            System.out.println("Welcome to the Sneaker Shop!");
+            System.out.println("1.Adidas Sneakers");
+            System.out.println("2.Nike Sneakers");
+            System.out.println("3.Puma Sneakers");
+            System.out.println("4.Total Price");     
+
+            System.out.println("\nEnter your choice: ");
+            userInput = keyboard.nextInt();
+
+            switch(userInput)
+            {
+                case 1:
+                {
+                    keyboard.nextLine();
+                    System.out.println("You chose Adidas Sneakers. Price:  R1800.89");
+
+                    System.out.println("\nDo you want to add to cart [Y]es or  [N]o");
+                    cAnswer = keyboard.nextLine().charAt(0);
+                    System.out.println("Do you have a ZTM account with? [Y]es or [N]o");
+                    cHasCard = keyboard.nextLine().charAt(0);
+
+                    if(cAnswer == 'y')
+                    {
+                        Orignalprice = Orignalprice + 1800.89;
+
+                        if(cHasCard == 'y')
+                        {
+                            discoutPrice = 1800.89 - (1800.89 * DISCOUNT); // How much will they pay after discount 
+                            currentDiscountPrice = currentDiscountPrice +  discoutPrice;
+
+                            System.out.println("\nAdded to cart!\nCurrent Price (With 30% Discount): " + formatter.format(discoutPrice));
+                            System.out.println("\nTotal Discount: " + formatter.format(currentDiscountPrice));
+                            break;
+
+                        }
+                        System.out.println("\nAdded to cart!\nCurrent Price: " +  formatter.format(Orignalprice));
+                    }
+
+                }
+                break;
+                case 2:
+                {
+                    keyboard.nextLine();
+                    System.out.println("You chose Nike Sneakers. Price:  R2199.59");
+
+                    System.out.println("\nDo you want to add to cart [Y]es or  [N]o");
+                    cAnswer = keyboard.nextLine().charAt(0);
+                    System.out.println("Do you have a ZTM account with? [Y]es or [N]o");
+                    cHasCard = keyboard.nextLine().charAt(0);
+
+                    if(cAnswer == 'y')
+                    {
+                        Orignalprice = Orignalprice + 2199.599;
+
+                        if(cHasCard == 'y')
+                        {
+                            discoutPrice = 2199.59 - (2199.59 * DISCOUNT); // How much will they pay after discount 
+                            currentDiscountPrice = currentDiscountPrice +  discoutPrice;
+
+                            System.out.println("\nAdded to cart!\nCurrent Price (With 30% Discount): " + formatter.format(discoutPrice));
+                            System.out.println("\nTotal Discount: " + formatter.format(currentDiscountPrice));
+                            break;
+                        }
+                        System.out.println("\nAdded to cart!\nCurrent Price: " +  formatter.format(Orignalprice));
+                    }
+                }
+                break;
+                 case 3:
+                {
+                    keyboard.nextLine();
+                    System.out.println("You chose Puma Sneakers. Price:  R1456.77");
+
+                    System.out.println("\nDo you want to add to cart [Y]es or  [N]o");
+                    cAnswer = keyboard.nextLine().charAt(0);
+                    System.out.println("Do you have a ZTM account with? [Y]es or [N]o");
+                    cHasCard = keyboard.nextLine().charAt(0);
+
+                    if(cAnswer == 'y')
+                    {
+                        Orignalprice = Orignalprice + 1456.77;
+
+                        if(cHasCard == 'y')
+                        {
+                            discoutPrice = 1456.77 - (1456.77 * DISCOUNT); // How much will they pay after discount 
+                            currentDiscountPrice = currentDiscountPrice +  discoutPrice;
+
+                            System.out.println("\nAdded to cart!\nCurrent Price (With 30% Discount): " + formatter.format(discoutPrice));
+                            System.out.println("\nTotal Discount: " + formatter.format(currentDiscountPrice)); 
+                            break;
+                        }
+                        System.out.println("\nAdded to cart!\nCurrent Price: " +  formatter.format(Orignalprice));
+                    }
+                }
+                break;
+                 case 4:
+                {
+                    System.out.println(name + " Here Is Your Total Price: " + formatter.format(Orignalprice));
+                    System.out.println(name + " Here Is Your Total Price (With 30% Discount): " + formatter.format(Orignalprice));
+                    countinueShopping = false;
+                }
+                break;
+                default:
+                {
+                    System.out.println("Invalid Option");
+                }
+
+
+            }
+
+        }
+        while(countinueShopping);
+    }
+
+}
+
+
+has context menu
